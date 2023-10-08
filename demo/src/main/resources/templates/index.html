@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Telefônica</title>
+</head>
+<body>
+    <h1>Agenda Telefônica</h1>
+    <form method="post" action="/addContact">
+        <input type="text" name="name" placeholder="Nome">
+        <input type="text" name="phoneNumber" placeholder="Telefone">
+        <button type="submit">Adicionar Contato</button>
+    </form>
+    <ul>
+        <li th:each="contact : ${contacts}">
+            <span th:text="${contact.name}"></span>: <span th:text="${contact.phoneNumber}"></span>
+        </li>
+    </ul>
+</body>
+</html>
